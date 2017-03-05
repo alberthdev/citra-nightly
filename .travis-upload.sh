@@ -1,4 +1,4 @@
-if [ "$TRAVIS_EVENT_TYPE" = "push" ]&&[ "$TRAVIS_BRANCH" = "master" ]; then
+if [ "$TRAVIS_EVENT_TYPE" = "push" ]&&[ "$TRAVIS_BRANCH" = "linux-static-gcc" ]; then
     GITDATE="`git show -s --date=short --format='%ad' | sed 's/-//g'`"
     GITREV="`git show -s --format='%h'`"
     mkdir -p artifacts
