@@ -37,3 +37,7 @@ deploy:
   skip_cleanup: true
   on:
     repo: citra-emu/citra-nightly
+
+branches:
+  only:
+  - linux-static-gcc
