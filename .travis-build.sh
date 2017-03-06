@@ -51,7 +51,7 @@ if [ "$TRAVIS_OS_NAME" = "linux" -o -z "$TRAVIS_OS_NAME" ]; then
     export CXXFLAGS="-static-libstdc++ -static-libgcc"
 
     mkdir build && cd build
-    cmake ..
+    cmake .. -DCMAKE_BUILD_TYPE=Release
     make -j4
 
     ctest -VV -C Release
