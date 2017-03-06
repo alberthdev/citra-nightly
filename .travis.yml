@@ -33,5 +33,4 @@ deploy:
   file: "artifacts/*.tar.*"
   skip_cleanup: true
   on:
-    branch: linux-static-gcc
     repo: alberthdev/citra-nightly

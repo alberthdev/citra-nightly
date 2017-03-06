@@ -1,4 +1,4 @@
-if [ "$TRAVIS_EVENT_TYPE" = "push" ]&&[ "$TRAVIS_BRANCH" = "linux-static-gcc" ]; then
+if [ "$TRAVIS_EVENT_TYPE" = "push" ]&&[ "$TRAVIS_BRANCH" = "master" ]; then
     GITDATE="`git show -s --date=short --format='%ad' | sed 's/-//g'`"
     GITREV="`git show -s --format='%h'`"
     mkdir -p artifacts
@@ -126,4 +126,7 @@ EOL
 
     # move the compiled archive into the artifacts directory to be uploaded by travis releases
     mv "$ARCHIVE_NAME" artifacts/
+
+    # output archive name
+    echo "Created: $ARCHIVE_NAME"
 fi
