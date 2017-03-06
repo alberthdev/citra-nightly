@@ -126,4 +126,7 @@ EOL
 
     # move the compiled archive into the artifacts directory to be uploaded by travis releases
     mv "$ARCHIVE_NAME" artifacts/
+
+    # output archive name
+    echo "Created: $ARCHIVE_NAME"
 fi

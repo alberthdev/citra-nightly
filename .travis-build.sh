@@ -47,9 +47,11 @@ if [ "$TRAVIS_OS_NAME" = "linux" -o -z "$TRAVIS_OS_NAME" ]; then
     export CC=gcc-6
     export CXX=g++-6
     export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
+    export CFLAGS="-static-libstdc++ -static-libgcc"
+    export CXXFLAGS="-static-libstdc++ -static-libgcc"
 
     mkdir build && cd build
-    cmake ..
+    cmake .. -DCMAKE_BUILD_TYPE=Release
     make -j4
 
     ctest -VV -C Release

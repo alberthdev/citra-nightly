@@ -4,9 +4,6 @@ matrix:
     - os: linux
       sudo: required
       dist: trusty
-    - os: osx
-      sudo: false
-      osx_image: xcode7.3
 
 addons:
   apt:
@@ -31,13 +28,9 @@ after_success: "./.travis-upload.sh"
 deploy:
   provider: releases
   api_key:
-    secure: Mck15DIWaJdxDiS3aYVlM9N3G6y8VKUI1rnwII7/iolfm1s94U+tgvbheZDmT7SSbFyaGaYO/E8HrV/uZR9Vvs7ev20sHsTN1u60OTWfDIIyHs9SqjhcGbtq95m9/dMFschOYqTOR+gAs5BsxjuoeAotHdhpQEwvkO2oo5oR0zhGy45gjFnVvtcxT/IfpZBIpVgcK3aLb9zT6ekcJbSiPmEB15iLq3xXd0nFUNtEZdX3D6Veye4n5jB6n72qN8JVoKvPZAwaC2K0pZxpcGJaXDchLsw1q+4eCvdz6UJfUemeQ/uMAmjfeQ3wrzYGXe3nCM3WmX5wosCsB0mw4zYatzl3si6CZ1W+0GkV4Rwlx03dfp7v3EeFhTsXYCaXqhwuLZnWOLUik8t9vaSoFUx4nUIRwfO9kAMUJQSpLuHNO2nT01s3GxvqxzczuLQ9he5nGSi0RRodUzDwek1qUp6I4uV3gRHKz4B07YIc1i2fK88NLXjyQ0uLVZ+7Oq1+kgDp6+N7vvXXZ5qZ17tdaysSbKEE0Y8zsoXw7Rk1tPN19vrCS+TSpomNMyQyne1k+I5iZ/qkxPTLAS5qI6Utc2dL3GJdxWRAEfGNO9AIX3GV/jmmKfdcvwGsCYP8hxqs5vLYfgacw3D8NLf1941lQUwavC17jm9EV9g5G3Pn1Cp516E=
+    secure: gLWmlbdhyQrgQeoXHNkrGIMbydUf2lLCXLlBTFqCvrTYS8xxSHTw6Ljzm+cKG44iihRZBczpOcYRuFusvoLr9yJjbyo2SllKg/k/W5w3V8Si68DgTJtJLJa3FpsTNB+flP/odxuJJoSRUhb6Mr5wdI9+UxOomnwuASHb6QZ7cY0umGOSHIMyTWh5lWDHseADG8ZKHhL0k1CO4lAakD6t9y0XmMDF2SWzMrvfyCz+W72nNZTinjVmhAOTSG0NWv5XCOjC61NSHHe1fLyy5ZNqHoBcX2urRR4tWMOMrio8IUTfsby5mXXcIkkLxwoKt+xtPYxaD851wsY78hq8UIArBKsHQ9spQzv5e/kKDhCbEQ7svIr3qKaTSj9xtNMpm4SFmYUgcrgLtR3nyKI+A8EyBVxkt+ILwmq/+49DZYeBvwGtXOp7hfOpIYX1iwd6J9hLllYLvbB2bBrdmLrVhkoK7dV0ft/IC2KNf/l7D5x4Nb3cOFO+SA3Y4dBb7qIefbdPQ8Xjfd11H2Q2adxSSnCjiLFXINzwIMqP5preMi3M6NGXCIzsu4G1VJmLX/ItvDMomUSat+DVP8qefEod2fWbQ4G6GdLFomM+maxowhXUjKigbZw78PJuH/LcBFqi/BWyWQuWrUM+3kCiAPx8GsyEmtHLL8n16j0vqfkQVx07HZ4=
   file_glob: true
   file: "artifacts/*.tar.*"
   skip_cleanup: true
   on:
-    repo: citra-emu/citra-nightly
-
-branches:
-  only:
-  - linux-static-gcc
+    repo: alberthdev/citra-nightly
